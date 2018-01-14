@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:key="start_game_countdown"
+        android:title="@string/start_game_countdown_description"
+        android:summary="10 sec"
+        android:dialogTitle="@string/start_game_countdown_dialog_title"
+        android:entries="@array/preference_game_countdown_entries"
+        android:entryValues="@array/preference_game_countdown_entries"
+        android:defaultValue="10 sec"/>
+
+    <SwitchPreference
+        android:key="game_wake_lock"
+        android:title="@string/game_wake_lock_title"
+        android:summary="@string/game_wake_lock_summary"
+        android:defaultValue="true"
+        />
+
+    <SwitchPreference
+        android:key="SoundOn"
+        android:title="@string/Game_Sound_on"
+        android:summary="@string/play_sounds_during_game"
+        android:defaultValue="true"
+        />
+
+    <ListPreference
+        android:key="theme_preference"
+        android:title="@string/theme_preference_title"
+        android:summary="Light"
+        android:dialogTitle="@string/theme_preference_title"
+        android:entries="@array/preference_theme_entries"
+        android:entryValues="@array/preference_theme_entries"
+        android:defaultValue="Dark"
+        />
+
+</PreferenceScreen>

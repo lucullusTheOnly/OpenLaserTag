@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_game"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="de.c_ebberg.openlasertag.GameActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:text="@string/ExitGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/exit_game_button"/>
+
+        <ImageButton
+            app:srcCompat="@drawable/ic_sound"
+            android:scaleType="fitCenter"
+            android:background="#00000000"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/game_sound_button"/>
+
+        <TextView
+            android:text="@string/NameDoublePoint"
+            android:textSize="25sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/exit_game_button"
+            android:id="@+id/player_name_id_label"/>
+
+        <TextView
+            android:text="PlayerOne (1)"
+            android:textSize="25sp"
+            android:textColor="?colorTextPrimary"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/exit_game_button"
+            android:layout_toRightOf="@id/player_name_id_label"
+            android:layout_toEndOf="@id/player_name_id_label"
+            android:id="@+id/player_name_id_text"/>
+
+        <TextView
+            android:text="@string/TeamDoublePoint"
+            android:textSize="25sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/player_name_id_label"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/team_label"/>
+
+        <TextView
+            android:text="PlayerTeam"
+            android:textSize="25sp"
+            android:textColor="?colorTextPrimary"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/player_name_id_text"
+            android:layout_toRightOf="@id/team_label"
+            android:layout_toEndOf="@id/team_label"
+            android:id="@+id/team_text"/>
+
+        <TextView
+            android:text="@string/GameDoublePoint"
+            android:textSize="25sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/team_label"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/game_name_label"/>
+
+        <TextView
+            android:text="GameName"
+            android:textSize="25sp"
+            android:textColor="?colorTextPrimary"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/game_name_label"
+            android:layout_toEndOf="@id/game_name_label"
+            android:layout_below="@id/team_text"
+            android:id="@+id/game_name_text"/>
+
+        <TextView
+            android:text="@string/WeaponDoublePoint"
+            android:textSize="25sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/game_name_label"
+            android:id="@+id/game_weapon_select_label"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/game_weapon_select_label"
+            android:layout_toEndOf="@id/game_weapon_select_label"
+            android:layout_below="@id/game_name_text"
+            android:id="@+id/game_weapon_select_spinner"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/game_time_layout"
+            android:layout_below="@id/game_weapon_select_label">
+            <TextView
+                android:text="20:00"
+                android:textSize="60sp"
+                android:textColor="?colorTextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/game_time_text"/>
+
+            <ImageView
+                app:srcCompat="@drawable/icon_flag"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:visibility="gone"
+                android:id="@+id/game_flag_view"/>
+        </RelativeLayout>
+
+        <de.c_ebberg.openlasertag.CustomProcessBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/game_points_bar"
+            android:layout_below="@id/game_time_layout"
+            app:TextDimension="18sp"
+            app:ValuePreceision="0"
+
+            app:Bar1="true"
+            app:Bar1Color="#FFFF0000"
+            app:Bar1BackgroundDarker="150"
+            app:Label1Color="?colorTextPrimary"
+            app:Label1Text="@string/Life"
+            app:Bar1ValueColor="#FFFFFFFF"
+            app:Bar1ShowValue="true"
+            app:Bar1MaxValue="100"
+            app:Bar2="true"
+            app:Bar2Color="#FF00FF00"
+            app:Bar2BackgroundDarker="150"
+            app:Label2Color="?colorTextPrimary"
+            app:Label2Text="@string/Shield"
+            app:Bar2ValueColor="#FFFFFFFF"
+            app:Bar2ShowValue="true"
+            app:Bar2MaxValue="100"
+            app:Bar3="true"
+            app:Bar3Color="#FF0000FF"
+            app:Bar3BackgroundDarker="150"
+            app:Label3Color="?colorTextPrimary"
+            app:Label3Text="@string/Ammo"
+            app:Bar3ValueColor="#FFFFFFFF"
+            app:Bar3ShowValue="true"
+            app:Bar3MaxValue="100"
+
+            app:Bar1Value="100"
+            app:Bar2Value="50"
+            app:Bar3Value="20"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/game_points_bar"
+            android:id="@+id/extra_lifes_layout">
+
+            <TextView
+                android:text="3"
+                android:textSize="18sp"
+                android:textColor="?colorTextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:paddingLeft="15dp"
+                android:paddingStart="15dp"
+                android:paddingRight="15dp"
+                android:paddingEnd="15dp"
+                android:id="@+id/ammo_packs_text"/>
+
+            <TextView
+                android:text="@string/AmmoPacksDoublePoint"
+                android:textSize="18sp"
+                android:textColor="?colorTextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/ammo_packs_text"
+                android:layout_toStartOf="@id/ammo_packs_text"
+                android:id="@+id/ammo_packs_label"/>
+
+            <TextView
+                android:text="@string/ExtraLifesDoublePoint"
+                android:textSize="18sp"
+                android:textColor="?colorTextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/extra_lifes_label"/>
+
+            <TextView
+                android:text="3"
+                android:textSize="18sp"
+                android:textColor="?colorTextPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/extra_lifes_label"
+                android:layout_toEndOf="@id/extra_lifes_label"
+                android:paddingLeft="15dp"
+                android:paddingStart="15dp"
+                android:paddingRight="15dp"
+                android:paddingEnd="15dp"
+                android:id="@+id/extra_lifes_text"/>
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/game_item_scroll_view">
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="6"
+                android:rowCount="2"
+                android:id="@+id/game_item_layout"/>
+        </ScrollView>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/extra_lifes_layout"
+            android:layout_above="@id/game_item_scroll_view"
+            android:id="@+id/game_messages_listview"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/extra_lifes_layout"
+            android:visibility="gone"
+            android:id="@+id/game_endstats_layout">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?colorItemDivider"/>
+            <TextView
+                android:text="@string/GameStats"
+                android:textColor="?colorTextPrimary"
+                android:textSize="23sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/game_stats_list"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="?colorOverlay"
+        android:id="@+id/countdown_overlay_layout"
+        >
+
+        <TextView
+            android:text="10"
+            android:textColor="?colorOverlayText"
+            android:textSize="60sp"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:id="@+id/countdown_overlay_text"/>
+    </RelativeLayout>
+
+</RelativeLayout>

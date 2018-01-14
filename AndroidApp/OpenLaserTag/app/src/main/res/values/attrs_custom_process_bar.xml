@@ -1,0 +1,55 @@
+<resources>
+    <declare-styleable name="CustomProcessBar">
+        <attr name="TextDimension" format="dimension" />
+        <attr name="Bar1" format="boolean"/>
+        <attr name="Bar2" format="boolean"/>
+        <attr name="Bar3" format="boolean"/>
+        <attr name="Bar4" format="boolean"/>
+        <attr name="Bar5" format="boolean"/>
+        <attr name="Bar1Color" format="color"/>
+        <attr name="Bar2Color" format="color"/>
+        <attr name="Bar3Color" format="color"/>
+        <attr name="Bar4Color" format="color"/>
+        <attr name="Label1Color" format="color"/>
+        <attr name="Label2Color" format="color"/>
+        <attr name="Label3Color" format="color"/>
+        <attr name="Label4Color" format="color"/>
+        <attr name="Bar1ProcessValue" format="float"/>
+        <attr name="Bar2ProcessValue" format="float"/>
+        <attr name="Bar3ProcessValue" format="float"/>
+        <attr name="Bar4ProcessValue" format="float"/>
+        <attr name="Bar1Value" format="float"/>
+        <attr name="Bar2Value" format="float"/>
+        <attr name="Bar3Value" format="float"/>
+        <attr name="Bar4Value" format="float"/>
+        <attr name="Bar1MaxValue" format="float"/>
+        <attr name="Bar2MaxValue" format="float"/>
+        <attr name="Bar3MaxValue" format="float"/>
+        <attr name="Bar4MaxValue" format="float"/>
+        <attr name="Bar1ValueColor" format="color"/>
+        <attr name="Bar2ValueColor" format="color"/>
+        <attr name="Bar3ValueColor" format="color"/>
+        <attr name="Bar4ValueColor" format="color"/>
+        <attr name="Bar1BackColor" format="color"/>
+        <attr name="Bar2BackColor" format="color"/>
+        <attr name="Bar3BackColor" format="color"/>
+        <attr name="Bar4BackColor" format="color"/>
+        <attr name="Bar1BackgroundDarker" format="integer"/>
+        <attr name="Bar2BackgroundDarker" format="integer"/>
+        <attr name="Bar3BackgroundDarker" format="integer"/>
+        <attr name="Bar4BackgroundDarker" format="integer"/>
+        <attr name="Label1Text" format="string"/>
+        <attr name="Label2Text" format="string"/>
+        <attr name="Label3Text" format="string"/>
+        <attr name="Label4Text" format="string"/>
+        <attr name="Bar1ShowProcessValue" format="boolean"/>
+        <attr name="Bar2ShowProcessValue" format="boolean"/>
+        <attr name="Bar3ShowProcessValue" format="boolean"/>
+        <attr name="Bar4ShowProcessValue" format="boolean"/>
+        <attr name="Bar1ShowValue" format="boolean"/>
+        <attr name="Bar2ShowValue" format="boolean"/>
+        <attr name="Bar3ShowValue" format="boolean"/>
+        <attr name="Bar4ShowValue" format="boolean"/>
+        <attr name="ValuePreceision" format="integer"/>
+    </declare-styleable>
+</resources>

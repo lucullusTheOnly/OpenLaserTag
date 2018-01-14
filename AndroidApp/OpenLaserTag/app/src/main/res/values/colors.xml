@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Resources for Theme Light -->
+    <color name="colorLightPrimary">#3F51B5</color>
+    <color name="colorLightPrimaryDark">#303f9f</color>
+    <color name="colorLightAccent">#FF4081</color>
+    <color name="colorLightBackground1">#FFFFFFFF</color>
+    <color name="colorLightBackground2">#FFCCCCCC</color>
+    <color name="colorLightBackgroundAccent">#9da5ed</color>
+    <color name="colorLightTextPrimary">#FF000000</color>
+    <color name="colorLightTextSecondary">#FF555555</color>
+    <color name="colorLightTextAccent">#FFFF0000</color>
+    <color name="colorLightTextBackgroundAccent">#88FF4081</color>
+    <color name="colorLightForegroundPrimary">#FF000000</color>
+    <color name="colorLightForegroundSecondary">#FF999999</color>
+    <color name="colorLightOverlay">#BB000000</color>
+    <color name="colorLightOverlayText">#FFFFFFFF</color>
+    <color name="colorLightItemDivider">#FF000000</color>
+    <color name="colorLightDiagramValue">#5d5dff</color>
+    <color name="colorLightButtonBackground">#b9b9b9</color>
+    <color name="colorLightButtonBackgroundPressed">#a4a3a3</color>
+    
+    <!-- Resources for Theme Dark -->
+    <color name="colorDarkPrimary">#da5f00</color>
+    <color name="colorDarkPrimaryDark">#f1710f</color>
+    <color name="colorDarkAccent">#ec6700</color>
+    <color name="colorDarkBackground1">#464646</color>
+    <color name="colorDarkBackground2">#868686</color>
+    <color name="colorDarkBackgroundAccent">#001297</color>
+    <color name="colorDarkTextPrimary">#ffffff</color>
+    <color name="colorDarkTextSecondary">#b9b9b9</color>
+    <color name="colorDarkTextAccent">#FFFF0000</color>
+    <color name="colorDarkTextBackgroundAccent">#b7ffb640</color>
+    <color name="colorDarkForegroundPrimary">#ffffff</color>
+    <color name="colorDarkForegroundSecondary">#FF868686</color>
+    <color name="colorDarkOverlay">#cc212121</color>
+    <color name="colorDarkOverlayText">#FFFFFFFF</color>
+    <color name="colorDarkItemDivider">#ffffff</color>
+    <color name="colorDarkDiagramValue">#ffc400</color>
+    <color name="colorDarkButtonBackground">#717171</color>
+    <color name="colorDarkButtonBackgroundPressed">#000000</color>
+
+    <!-- Resources for Theme Bee -->
+    <color name="colorBeePrimary">#ffc400</color>
+    <color name="colorBeePrimaryDark">#ffbb00</color>
+    <color name="colorBeeAccent">#ef6000</color>
+    <color name="colorBeeBackground1">#464646</color>
+    <color name="colorBeeBackground2">#868686</color>
+    <color name="colorBeeBackgroundAccent">#ffc400</color>
+    <color name="colorBeeTextPrimary">#ffffff</color>
+    <color name="colorBeeTextSecondary">#b9b9b9</color>
+    <color name="colorBeeTextAccent">#FFFF0000</color>
+    <color name="colorBeeTextBackgroundAccent">#88FF4081</color>
+    <color name="colorBeeForegroundPrimary">#ffffff</color>
+    <color name="colorBeeForegroundSecondary">#FF868686</color>
+    <color name="colorBeeOverlay">#cc212121</color>
+    <color name="colorBeeOverlayText">#FFFFFFFF</color>
+    <color name="colorBeeItemDivider">#ffffff</color>
+    <color name="colorBeeDiagramValue">#ffd500</color>
+    <color name="colorBeeButtonBackground">#717171</color>
+    <color name="colorBeeButtonBackgroundPressed">#000000</color>
+
+</resources>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <NumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/game_config_time_dialog_hours"
+        android:background="?colorBackground1"/>
+    <TextView
+        android:text=":"
+        android:textSize="23sp"
+        android:textColor="?colorTextPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/game_config_time_dialog_hours"
+        android:layout_toEndOf="@id/game_config_time_dialog_hours"
+        android:id="@+id/game_config_time_dialog_firstdivider"/>
+
+    <NumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/game_config_time_dialog_firstdivider"
+        android:layout_toEndOf="@id/game_config_time_dialog_firstdivider"
+        android:id="@+id/game_config_time_dialog_minutes"
+        android:background="?colorBackground1"/>
+    <TextView
+        android:text=":"
+        android:textSize="23sp"
+        android:textColor="?colorTextPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/game_config_time_dialog_minutes"
+        android:layout_toEndOf="@id/game_config_time_dialog_minutes"
+        android:id="@+id/game_config_time_dialog_seconddivider"/>
+
+    <NumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/game_config_time_dialog_seconddivider"
+        android:layout_toEndOf="@id/game_config_time_dialog_seconddivider"
+        android:id="@+id/game_config_time_dialog_seconds"
+        android:background="?colorBackground1"/>
+
+
+</RelativeLayout>

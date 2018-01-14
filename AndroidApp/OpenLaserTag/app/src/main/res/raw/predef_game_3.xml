@@ -1,0 +1,124 @@
+<OpenLaserTagGame>
+    <GameName value="Simple Zombie Game"/>
+    <timestamp value="2017-07-08_23:20"/>
+    <SketchVersion value="0.1"/>
+    <AppVersion value="0.1"/>
+    <Description>One Player starts as a zombie and is fighting against all other players. If the zombie hits a normal player 4 times, the player becomes a zombie, too. The game ends, when all players are zombies (zombies win) or when the time runs out (humans win). Zombies have unlimited ammo, but have to cool down for 3 seconds when they were hit by a human. The humans have limited ammo, but can reload at any team base. There is no Shield in this game.</Description>
+    <Definitions>
+        <Weapon index="0" name="Pistol" damagesign="+" shotfrequency="2" range="1" allowed="true"/>
+        <Weapon index="1" name="ZombieBite" damagesign="+" shotfrequency="2" range="1" allowed="false"/>
+        <Timer name="GameTimer" duration="900" ticks="1"/>
+        <Team index="0" name="Humans" color="green"/>
+        <Team index="1" name="Zombies" color="red"/>
+    </Definitions>
+    <Sounds>
+        <Sound name="good_luck"/>
+        <Sound name="shield_hit_1"/>
+        <Sound name="zone_hostile"/>
+        <Sound name="out_of_ammo_2"/>
+        <Sound name="laser_gun_shot_1"/>
+        <Sound name="reload_1"/>
+        <Sound name="overheat"/>
+        <Sound name="game_over"/>
+        <Sound name="reload_long"/>
+    </Sounds>
+    <GameVariables>
+        <Variable name="max_LifePoints" type="int" value="100"/>
+        <Variable name="max_ShieldPoints" type="int" value="0"/>
+        <Variable name="max_AmmoPoints" type="int" value="100"/>
+        <Variable name="max_ExtraLifes" type="int" value="0"/>
+        <Variable name="max_AmmoPacks" type="int" value="8"/>
+        <Variable name="LifePoints" type="int" value="100"/>
+        <Variable name="ShieldPoints" type="int" value="0"/>
+        <Variable name="AmmoPoints" type="int" value="100"/>
+        <Variable name="AmmoPacks" type="int" value="8"/>
+        <Variable name="ExtraLifes" type="int" value="0"/>
+        <Variable name="TeamID" type="int" value="0"/>
+        <Variable name="WeaponType" type="int" value="0"/>
+        <Variable name="WeaponDamage" type="int" value="6"/>
+        <Variable name="PlayerID" type="int" value="1"/>
+        <Variable name="ZombieCoolDown" type="int" value="3000"/>
+    </GameVariables>
+    <SignalCode>
+        <Signal name="GAME_INITIATED" parallel="false">
+            <Command name="CHANGECOLOR" par1="black"/>
+        </Signal>
+        <Signal name="GAME_STARTED" parallel="false">
+            <IF var="TeamID" operator="=" value="0">
+                <Command name="SETWEAPONALLOWED" par1="0" par2="true"/>
+                <Command name="SETWEAPONALLOWED" par1="1" par2="false"/>
+                <Command name="CHANGECOLOR" par1="Team_0.color"/>
+                <ELSE>
+                    <Command name="SETWEAPONALLOWED" par1="0" par2="false"/>
+                    <Command name="SETWEAPONALLOWED" par1="1" par2="true"/>
+                    <Command name="CHANGECOLOR" par1="Team_1.color"/>
+                </ELSE>
+            </IF>
+            <Command name="ENABLETAGGER"/>
+            <Command name="PLAYSOUND" par1="good_luck"/>
+        </Signal>
+        <Signal name="SHOT_RECEIVED" parallel="true" static="true">
+            <IF var="TeamID" operator="=" value="0">
+                <Command name="DECREASELIFEPOINTS" par1="shot_damage"/>
+                <Command name="PLAYSOUND" par1="shield_hit_1"/>
+                <ELSE>
+                    <Command name="CHANGECOLOR" par1="black"/>
+                    <Command name="DISABLETAGGER"/>
+                    <Command name="PLAYSOUND" par1="zone_hostile"/>
+                    <Command name="DELAY" par1="ZombieCoolDown"/>
+                    <Command name="CHANGECOLOR" par1="Team_1.color"/>
+                    <Command name="ENABLETAGGER"/>
+                </ELSE>
+            </IF>
+        </Signal>
+        <Signal name="TRIGGER_PULLED" parallel="false">
+            <IF var="TeamID" operator="=" value="0">
+                <IF var="AmmoPoints" operator="=" value="0">
+                    <Command name="PLAYSOUND" par1="out_of_ammo_2"/>
+                    <Command name="SETAMMOINDICATOR" par1="true"/>
+                    <Command name="DISABLETAGGER"/>
+                    <Command name="RETURN"/>
+                </IF>
+                <Command name="PLAYSOUND" par1="laser_gun_shot_1"/>
+                <Command name="DECREASEAMMOPOINTS" par1="1"/>
+            </IF>
+        </Signal>
+        <Signal name="RECHARGE_BUTTON" parallel="true">
+            <IF var="TeamID" operator="=" value="1">
+                <Command name="RETURN"/>
+            </IF>
+            <IF var="AmmoPacks" operator="=" value="0">
+                <Command name="RETURN"/>
+            </IF>
+            <Command name="PLAYSOUND" par1="reload_1"/>
+            <Command name="DELAY" par1="3000"/>
+            <Command name="SETVARIABLE" par1="AmmoPoints" par2="max_AmmoPoints"/>
+            <Command name="DECREASEAMMOPACKS" par1="1"/>
+            <Command name="SETAMMOINDICATOR" par1="false"/>
+            <IF var="LifePoints" operator=">" value="0">
+                <Command name="ENABLETAGGER"/>
+            </IF>
+        </Signal>
+        <Signal name="PLAYER_DEAD" parallel="true" static="true">
+            <Command name="PLAYSOUND" par1="overheat"/>
+            <Command name="CHANGETEAM" par1="1"/>
+            <Command name="CHANGECOLOR" par1="Team_1.color"/>
+            <Command name="SETWEAPONALLOWED" par1="0" par2="false"/>
+            <Command name="SETWEAPONALLOWED" par1="1" par2="true"/>
+            <Command name="SETVARIABLE" par1="WeaponType" par2="1"/>
+        </Signal>
+        <Signal name="GAME_OVER" parallel="false">
+            <Command name="PLAYSOUND" par1="game_over"/>
+            <Command name="DISABLETAGGER"/>
+            <Command name="CHANGECOLOR" par1="white"/>
+        </Signal>
+        <Signal name="PLAYER_BASE_SIGNAL" parallel="true" static="true">
+            <Command name="PLAYSOUND" par1="reload_long"/>
+            <Command name="DELAY" par1="6000"/>
+            <Command name="SETVARIABLE" par1="AmmoPoints" par2="max_AmmoPoints"/>
+            <Command name="SETVARIABLE" par1="AmmoPacks" par2="max_AmmoPacks"/>
+        </Signal>
+    </SignalCode>
+    <PlayerStats>
+    </PlayerStats>
+</OpenLaserTagGame>

@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="de.c_ebberg.openlasertag.OpenLaserTagMain">
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/UserManager_menu"
+        android:orderInCategory="100"
+        android:title="@string/manage_users_menu_titel"
+        app:showAsAction="never" />
+</menu>

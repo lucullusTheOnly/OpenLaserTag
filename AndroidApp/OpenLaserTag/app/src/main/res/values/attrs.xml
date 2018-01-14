@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorPrimary" format="color"/>
+    <attr name="colorPrimaryDark" format="color"/>
+    <attr name="colorAccent" format="color"/>
+    <attr name="colorBackground1" format="color"/>
+    <attr name="colorBackground2" format="color"/>
+    <attr name="colorBackgroundAccent" format="color"/>
+    <attr name="colorTextPrimary" format="color"/>
+    <attr name="colorTextSecondary" format="color"/>
+    <attr name="colorTextAccent" format="color"/>
+    <attr name="colorTextBackgroundAccent" format="color"/>
+    <attr name="colorForegroundPrimary" format="color"/>
+    <attr name="colorForegroundSecondary" format="color"/>
+    <attr name="colorOverlay" format="color"/>
+    <attr name="colorOverlayText" format="color"/>
+    <attr name="colorItemDivider" format="color"/>
+    <attr name="colorDiagramValue" format="color"/>
+    <attr name="colorButtonNormal" format="color"/>
+    <attr name="colorButtonBackground" format="color"/>
+    <attr name="colorButtonBackgroundPressed" format="color"/>
+</resources>

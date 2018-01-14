@@ -1,0 +1,39 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <de.c_ebberg.openlasertag.CustomProcessBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:TextDimension="18sp"
+
+        app:Bar1="true"
+        app:Bar1Color="#FFFF0000"
+        app:Bar1BackgroundDarker="150"
+        app:Label1Color="#FF000000"
+        app:Label1Text="Life"
+        app:Bar1ValueColor="#FFFFFFFF"
+        app:Bar1ShowValue="true"
+        app:Bar2="true"
+        app:Bar2Color="#FF00FF00"
+        app:Bar2BackgroundDarker="150"
+        app:Label2Color="#FF000000"
+        app:Label2Text="Shield"
+        app:Bar2ValueColor="#FFFFFFFF"
+        app:Bar2ShowValue="true"
+        app:Bar3="true"
+        app:Bar3Color="#FF0000FF"
+        app:Bar3BackgroundDarker="150"
+        app:Label3Color="#FF000000"
+        app:Label3Text="Ammo"
+        app:Bar3ValueColor="#FFFFFFFF"
+        app:Bar3ShowProcessValue="true"
+
+        app:Bar1ProcessValue="0.75"
+        app:Bar2ProcessValue="0.5"
+        app:Bar3ProcessValue="0.2"
+
+        app:ValuePreceision="2"/>
+
+</FrameLayout>

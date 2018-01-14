@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_tagger_config"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="de.c_ebberg.openlasertag.TaggerConfigActivity"
+    tools:showIn="@layout/activity_tagger_config">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal"
+        android:id="@+id/tagger_config_tab_layout">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <Button
+                    android:text="@string/ReceiverNConfig"
+                    android:background="?colorBackground1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="7dp"
+                    android:id="@+id/tagger_config_receiver_tabbutton"/>
+
+                <ImageView
+                    android:layout_width="4dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/tagger_config_receiver_tabmarker"
+                    android:background="?colorAccent"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="right"
+                android:layout_weight="1">
+                <Button
+                    android:text="@string/BluetoothNConfig"
+                    android:background="?colorBackground1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="7dp"
+                    android:id="@+id/tagger_config_bluetooth_tabbutton"/>
+
+                <ImageView
+                    android:layout_width="4dp"
+                    android:layout_height="match_parent"
+                    android:background="#00000000"
+                    android:id="@+id/tagger_config_bluetooth_tabmarker"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="right"
+                android:layout_weight="1">
+                <Button
+                    android:text="@string/IRConfig"
+                    android:background="?colorBackground1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="7dp"
+                    android:id="@+id/tagger_config_ir_tabbutton"/>
+
+                <ImageView
+                    android:layout_width="4dp"
+                    android:layout_height="match_parent"
+                    android:background="#00000000"
+                    android:id="@+id/tagger_config_ir_tabmarker"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="?colorForegroundPrimary"/>
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/tagger_config_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/tagger_config_tab_layout"
+        android:layout_toEndOf="@id/tagger_config_tab_layout"
+        android:background="?colorBackground1"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
+
+</RelativeLayout>

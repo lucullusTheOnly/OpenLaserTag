@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="@string/DurationDoublePoint"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:id="@+id/game_config_timer_dialog_duration_label"/>
+        <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/game_config_timer_dialog_duration_label"
+            android:layout_toEndOf="@id/game_config_timer_dialog_duration_label"
+            android:id="@+id/game_config_timer_dialog_duration_hours"
+            android:background="?colorBackground1"/>
+        <TextView
+            android:text=":"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/game_config_timer_dialog_duration_hours"
+            android:layout_toEndOf="@id/game_config_timer_dialog_duration_hours"
+            android:id="@+id/game_config_timer_dialog_duration_firstdivider"/>
+
+        <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/game_config_timer_dialog_duration_firstdivider"
+            android:layout_toEndOf="@id/game_config_timer_dialog_duration_firstdivider"
+            android:id="@+id/game_config_timer_dialog_duration_minutes"
+            android:background="?colorBackground1"/>
+        <TextView
+            android:text=":"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/game_config_timer_dialog_duration_minutes"
+            android:layout_toEndOf="@id/game_config_timer_dialog_duration_minutes"
+            android:id="@+id/game_config_timer_dialog_duration_seconddivider"/>
+
+        <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/game_config_timer_dialog_duration_seconddivider"
+            android:layout_toEndOf="@id/game_config_timer_dialog_duration_seconddivider"
+            android:id="@+id/game_config_timer_dialog_duration_seconds"
+            android:background="?colorBackground1"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="@string/TicksDoublePoint"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:id="@+id/game_config_timer_dialog_ticks_label"/>
+        <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/game_config_timer_dialog_ticks_label"
+            android:layout_toEndOf="@id/game_config_timer_dialog_ticks_label"
+            android:background="?colorBackground1"
+            android:id="@+id/game_config_timer_dialog_ticks_hours"      />
+        <TextView
+            android:text=":"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/game_config_timer_dialog_ticks_hours"
+            android:layout_toEndOf="@id/game_config_timer_dialog_ticks_hours"
+            android:id="@+id/game_config_timer_dialog_ticks_firstdivider"/>
+
+        <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/game_config_timer_dialog_ticks_firstdivider"
+            android:layout_toEndOf="@id/game_config_timer_dialog_ticks_firstdivider"
+            android:background="?colorBackground1"
+            android:id="@+id/game_config_timer_dialog_ticks_minutes"      />
+        <TextView
+            android:text=":"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/game_config_timer_dialog_ticks_minutes"
+            android:layout_toEndOf="@id/game_config_timer_dialog_ticks_minutes"
+            android:id="@+id/game_config_timer_dialog_ticks_seconddivider"/>
+
+        <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/game_config_timer_dialog_ticks_seconddivider"
+            android:layout_toEndOf="@id/game_config_timer_dialog_ticks_seconddivider"
+            android:background="?colorBackground1"
+            android:id="@+id/game_config_timer_dialog_ticks_seconds"      />
+    </RelativeLayout>
+
+</LinearLayout>

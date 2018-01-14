@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="de.c_ebberg.openlasertag">
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppThemeLight">
+        <activity
+            android:name=".OpenLaserTagMain"
+            android:label="@string/app_name"
+            android:theme="@style/LightNoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoadGameActivity"
+            android:label="@string/title_activity_load_game"
+            android:parentActivityName=".OpenLaserTagMain"
+            android:theme="@style/LightNoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.c_ebberg.openlasertag.OpenLaserTagMain" />
+        </activity>
+        <activity
+            android:name=".InitGameActivity"
+            android:label="@string/title_activity_init_game"
+            android:parentActivityName=".LoadGameActivity"
+            android:theme="@style/LightNoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.c_ebberg.openlasertag.LoadGameActivity" />
+        </activity>
+        <activity
+            android:name=".GameActivity"
+            android:theme="@style/LightNoActionBar" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".OpenLaserTagMain"
+            android:theme="@style/LightNoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.c_ebberg.openlasertag.OpenLaserTagMain" />
+        </activity>
+        <activity
+            android:name=".ManageUsersActivity"
+            android:label="@string/title_activity_manage_users"
+            android:parentActivityName=".OpenLaserTagMain"
+            android:theme="@style/LightNoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.c_ebberg.openlasertag.OpenLaserTagMain" />
+        </activity>
+        <activity
+            android:name=".TaggerConfigActivity"
+            android:label="@string/title_activity_tagger_config"
+            android:parentActivityName=".OpenLaserTagMain"
+            android:theme="@style/LightNoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.c_ebberg.openlasertag.OpenLaserTagMain" />
+        </activity>
+        <activity
+            android:name=".GameConfigActivity"
+            android:label="@string/title_activity_game_config"
+            android:parentActivityName=".InitGameActivity"
+            android:theme="@style/LightNoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.c_ebberg.openlasertag.LoadGameActivity" />
+        </activity>
+        <activity
+            android:name=".StatsActivity"
+            android:label="@string/title_activity_stats"
+            android:parentActivityName=".OpenLaserTagMain"
+            android:theme="@style/LightNoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.c_ebberg.openlasertag.OpenLaserTagMain" />
+        </activity>
+    </application>
+
+</manifest>

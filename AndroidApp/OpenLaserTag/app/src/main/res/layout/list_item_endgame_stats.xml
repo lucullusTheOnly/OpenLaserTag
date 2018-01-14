@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:text="StatName"
+        android:textColor="?colorTextPrimary"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/list_item_endgame_stats_name"/>
+    <TextView
+        android:text="@string/GameStatsValue"
+        android:textColor="?colorTextPrimary"
+        android:textSize="19sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/list_item_endgame_stats_value"/>
+</LinearLayout>

@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="StatsDiagramView">
+        <attr name="StatsDiagramCoordinateColor" format="color|reference" />
+        <attr name="StatsDiagramValueColor" format="color|reference"/>
+        <attr name="StatsDiagramGameMarkerColor" format="color|reference"/>
+        <attr name="StatsDiagramTextColor" format="color|reference"/>
+    </declare-styleable>
+</resources>

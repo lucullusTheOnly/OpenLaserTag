@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="?colorBackground1">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:src="@android:drawable/divider_horizontal_bright"
+        android:id="@+id/bt_itemdivider"
+        android:background="?colorItemDivider"/>
+
+    <TextView
+        android:text="HC-06"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="?colorTextPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bt_itemdivider"
+        android:id="@+id/bt_device_name_text"/>
+
+    <TextView
+        android:text="@string/AdressDoublePoint"
+        android:textSize="21sp"
+        android:textColor="?colorTextPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bt_device_name_text"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/bt_device_address_label"/>
+
+    <TextView
+        android:text="ade6f-78768-a8e9fc-098cda"
+        android:textColor="?colorTextPrimary"
+        android:textSize="21sp"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bt_device_name_text"
+        android:layout_toRightOf="@id/bt_device_address_label"
+        android:layout_toEndOf="@id/bt_device_address_label"
+        android:id="@+id/bt_device_address_text"/>
+
+</RelativeLayout>

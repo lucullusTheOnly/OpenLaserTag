@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/game_config_team_dialog_name_layout">
+        <TextView
+            android:text="@string/TeamNameDoublePoint"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:id="@+id/game_config_team_dialog_name_label"/>
+
+        <EditText
+            android:text="@string/DefaultTeamName"
+            android:textAlignment="center"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:inputType="textNoSuggestions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/game_config_team_dialog_name_label"
+            android:layout_toEndOf="@id/game_config_team_dialog_name_label"
+            android:id="@+id/game_config_team_dialog_name"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/game_config_team_dialog_name_layout"
+        android:id="@+id/game_config_team_dialog_color_layout">
+
+        <TextView
+            android:text="@string/ColorDoublePoint"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/game_config_team_dialog_color_label"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/game_config_team_dialog_color_label"
+            android:layout_toEndOf="@id/game_config_team_dialog_color_label"
+            android:id="@+id/game_config_team_dialog_color_spinner"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

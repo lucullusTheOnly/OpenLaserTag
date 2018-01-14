@@ -1,0 +1,119 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppThemeLight" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorLightPrimary</item>
+        <item name="colorPrimaryDark">@color/colorLightPrimaryDark</item>
+        <item name="colorAccent">@color/colorLightAccent</item>
+        <item name="android:textColorPrimary">@color/colorLightTextPrimary</item>
+        <item name="android:textColorSecondary">@color/colorLightTextSecondary</item>
+        <item name="android:colorForeground">@color/colorLightForegroundPrimary</item>
+        <item name="android:windowBackground">@color/colorLightBackground1</item>
+        <item name="android:itemBackground">@color/colorLightBackground1</item>
+        <item name="android:itemTextAppearance">@style/PopupItemTextAppearanceLight</item>
+
+        <item name="colorBackground1">@color/colorLightBackground1</item>
+        <item name="colorBackground2">@color/colorLightBackground2</item>
+        <item name="colorBackgroundAccent">@color/colorLightBackgroundAccent</item>
+        <item name="colorTextPrimary">@color/colorLightTextPrimary</item>
+        <item name="colorTextSecondary">@color/colorLightTextSecondary</item>
+        <item name="colorTextAccent">@color/colorLightTextAccent</item>
+        <item name="colorTextBackgroundAccent">@color/colorLightTextBackgroundAccent</item>
+        <item name="colorForegroundPrimary">@color/colorLightForegroundPrimary</item>
+        <item name="colorForegroundSecondary">@color/colorLightForegroundSecondary</item>
+        <item name="colorOverlay">@color/colorLightOverlay</item>
+        <item name="colorOverlayText">@color/colorLightOverlayText</item>
+        <item name="colorItemDivider">@color/colorLightItemDivider</item>
+        <item name="colorDiagramValue">@color/colorLightDiagramValue</item>
+        <item name="colorButtonNormal">@color/colorLightButtonBackground</item>
+        <item name="colorButtonBackground">@color/colorLightButtonBackground</item>
+        <item name="colorButtonBackgroundPressed">@color/colorLightButtonBackgroundPressed</item>
+    </style>
+    <style name="AppThemeDark" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorDarkPrimary</item>
+        <item name="colorPrimaryDark">@color/colorDarkPrimaryDark</item>
+        <item name="colorAccent">@color/colorDarkAccent</item>
+        <item name="android:textColorPrimary">@color/colorDarkTextPrimary</item>
+        <item name="android:textColorSecondary">@color/colorDarkTextSecondary</item>
+        <item name="android:colorForeground">@color/colorDarkForegroundPrimary</item>
+        <item name="android:windowBackground">@color/colorDarkBackground1</item>
+        <item name="android:itemBackground">@color/colorDarkBackground1</item>
+        <item name="android:itemTextAppearance">@style/PopupItemTextAppearanceDark</item>
+
+        <item name="colorBackground1">@color/colorDarkBackground1</item>
+        <item name="colorBackground2">@color/colorDarkBackground2</item>
+        <item name="colorBackgroundAccent">@color/colorDarkBackgroundAccent</item>
+        <item name="colorTextPrimary">@color/colorDarkTextPrimary</item>
+        <item name="colorTextSecondary">@color/colorDarkTextSecondary</item>
+        <item name="colorTextAccent">@color/colorDarkTextAccent</item>
+        <item name="colorTextBackgroundAccent">@color/colorDarkTextBackgroundAccent</item>
+        <item name="colorForegroundPrimary">@color/colorDarkForegroundPrimary</item>
+        <item name="colorForegroundSecondary">@color/colorDarkForegroundSecondary</item>
+        <item name="colorOverlay">@color/colorDarkOverlay</item>
+        <item name="colorOverlayText">@color/colorDarkOverlayText</item>
+        <item name="colorItemDivider">@color/colorDarkItemDivider</item>
+        <item name="colorDiagramValue">@color/colorDarkDiagramValue</item>
+        <item name="colorButtonNormal">@color/colorDarkButtonBackground</item>
+        <item name="colorButtonBackground">@color/colorDarkButtonBackground</item>
+        <item name="colorButtonBackgroundPressed">@color/colorDarkButtonBackgroundPressed</item>
+    </style>
+    <style name="AppThemeBee" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorBeePrimary</item>
+        <item name="colorPrimaryDark">@color/colorBeePrimaryDark</item>
+        <item name="colorAccent">@color/colorBeeAccent</item>
+        <item name="android:textColorPrimary">@color/colorBeeTextPrimary</item>
+        <item name="android:textColorSecondary">@color/colorBeeTextSecondary</item>
+        <item name="android:colorForeground">@color/colorBeeForegroundPrimary</item>
+        <item name="android:windowBackground">@color/colorBeeBackground1</item>
+        <item name="android:itemBackground">@color/colorBeeBackground1</item>
+        <item name="android:itemTextAppearance">@style/PopupItemTextAppearanceBee</item>
+
+        <item name="colorBackground1">@color/colorBeeBackground1</item>
+        <item name="colorBackground2">@color/colorBeeBackground2</item>
+        <item name="colorBackgroundAccent">@color/colorBeeBackgroundAccent</item>
+        <item name="colorTextPrimary">@color/colorBeeTextPrimary</item>
+        <item name="colorTextSecondary">@color/colorBeeTextSecondary</item>
+        <item name="colorTextAccent">@color/colorBeeTextAccent</item>
+        <item name="colorTextBackgroundAccent">@color/colorBeeTextBackgroundAccent</item>
+        <item name="colorForegroundPrimary">@color/colorBeeForegroundPrimary</item>
+        <item name="colorForegroundSecondary">@color/colorBeeForegroundSecondary</item>
+        <item name="colorOverlay">@color/colorBeeOverlay</item>
+        <item name="colorOverlayText">@color/colorBeeOverlayText</item>
+        <item name="colorItemDivider">@color/colorBeeItemDivider</item>
+        <item name="colorDiagramValue">@color/colorBeeDiagramValue</item>
+        <item name="colorButtonNormal">@color/colorBeeButtonBackground</item>
+        <item name="colorButtonBackground">@color/colorBeeButtonBackground</item>
+        <item name="colorButtonBackgroundPressed">@color/colorBeeButtonBackgroundPressed</item>
+    </style>
+
+    <style name="LightNoActionBar" parent="AppThemeLight">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="DarkNoActionBar" parent="AppThemeDark">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="BeeNoActionBar" parent="AppThemeBee">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="PopupItemTextAppearanceDark" parent="android:TextAppearance">
+        <item name="android:textColor">@color/colorDarkTextPrimary</item>
+    </style>
+    <style name="PopupItemTextAppearanceLight" parent="android:TextAppearance">
+        <item name="android:textColor">@color/colorLightTextPrimary</item>
+    </style>
+    <style name="PopupItemTextAppearanceBee" parent="android:TextAppearance">
+        <item name="android:textColor">@color/colorBeeTextPrimary</item>
+    </style>
+
+    <style name="AppThemeLight.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppThemeLight.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

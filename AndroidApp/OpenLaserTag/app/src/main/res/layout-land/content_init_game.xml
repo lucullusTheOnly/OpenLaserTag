@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_init_game"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="de.c_ebberg.openlasertag.InitGameActivity"
+    tools:showIn="@layout/activity_init_game">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/player_name_layout">
+
+            <TextView
+                android:text="@string/PlayerNameDoublePoint"
+                android:textSize="25sp"
+                android:textColor="?colorTextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:id="@+id/player_name_label"/>
+
+            <EditText
+                android:text="PlayerOne"
+                android:textColor="?colorTextPrimary"
+                android:textSize="25sp"
+                android:textAlignment="center"
+                android:inputType="textNoSuggestions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/player_name_label"
+                android:layout_toEndOf="@id/player_name_label"
+                android:id="@+id/player_name_edit_text"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/player_id_layout"
+            android:layout_below="@id/player_name_layout">
+            <TextView
+                android:text="@string/PlayerID"
+                android:textSize="25sp"
+                android:textColor="?colorTextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:id="@+id/player_id_label"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/player_id_label"
+                android:layout_toRightOf="@id/player_id_label"
+                android:id="@+id/player_id_spinner"
+                android:background="?colorBackground2"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/player_id_layout"
+            android:id="@+id/join_team_layout">
+            <TextView
+                android:text="@string/JoinTeam"
+                android:textSize="25sp"
+                android:textColor="?colorTextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:id="@+id/join_team_label"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/join_team_label"
+                android:layout_toEndOf="@id/join_team_label"
+                android:id="@+id/join_team_spinner"
+                android:background="?colorBackground2"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/join_team_layout"
+            android:id="@+id/init_game_duration_layout">
+
+            <TextView
+                android:text="@string/DurationDoublePoint"
+                android:textSize="25sp"
+                android:textColor="?colorTextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/duration_label" />
+
+            <TextView
+                android:text="20:00"
+                android:textColor="?colorTextPrimary"
+                android:textSize="25sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@id/duration_label"
+                android:layout_toRightOf="@id/duration_label"
+                android:id="@+id/duration_text"
+                android:textAlignment="center" />
+        </RelativeLayout>
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_settings"
+            android:background="?colorBackground1"
+            android:padding="2dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+
+            android:id="@+id/init_game_settings_button"/>
+
+        <Button
+            android:text="@string/StartGame"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/init_game_settings_button"
+            android:layout_toEndOf="@id/init_game_settings_button"
+
+            android:id="@+id/start_game_button" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+
+        android:id="@+id/init_game_info_layout">
+
+        <TextView
+            android:text="@string/DescriptionDoublePoint"
+            android:textSize="25sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:id="@+id/description_label"/>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/description_label"
+            android:background="?colorBackground2">
+            <TextView
+                android:text="@string/NoDescription"
+                android:textColor="?colorTextPrimary"
+                android:textSize="23sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/description_text"
+                android:background="#00000000"/>
+        </android.support.v4.widget.NestedScrollView>
+    </RelativeLayout>
+
+</LinearLayout>

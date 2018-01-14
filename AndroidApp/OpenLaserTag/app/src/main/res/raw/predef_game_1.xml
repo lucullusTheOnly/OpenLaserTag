@@ -1,0 +1,110 @@
+<OpenLaserTagGame>
+	<GameName value="Simple Team Match"/>
+	<timestamp value="2017-02-20_00:40"/>
+	<SketchVersion value="0.1"/>
+	<AppVersion value="0.1"/>
+	<Description>Simple Team Match with confined lifes. A team wins, when one of the teams has no alive members left. If the game time ends, before this happens, the team with the most alive members left. If this number is equal for the teams, the team with the maximum lifepoints wins.</Description>
+	<Definitions>
+		<Weapon index="0" name="Pistol" damagesign="+" shotfrequency="2" range="1" allowed="true"/>
+		<Timer name="GameTimer" duration="900" ticks="1"/>
+		<Team index="0" name="Reds" color="red"/>
+		<Team index="1" name="Blues" color="blue"/>
+	</Definitions>
+	<Sounds>
+		<Sound name="good_luck"/>
+		<Sound name="shield_hit_1"/>
+		<Sound name="shield_hit_2"/>
+		<Sound name="out_of_ammo_2"/>
+		<Sound name="laser_gun_shot_1"/>
+		<Sound name="reload_1"/>
+		<Sound name="youre_out"/>
+		<Sound name="game_over"/>
+		<Sound name="reload_long"/>
+	</Sounds>
+	<GameVariables>
+		<Variable name="max_LifePoints" type="int" value="100"/>
+		<Variable name="max_ShieldPoints" type="int" value="100"/>
+		<Variable name="max_AmmoPoints" type="int" value="50"/>
+		<Variable name="max_ExtraLifes" type="int" value="4"/>
+		<Variable name="max_AmmoPacks" type="int" value="4"/>
+		<Variable name="LifePoints" type="int" value="100"/>
+		<Variable name="ShieldPoints" type="int" value="100"/>
+		<Variable name="AmmoPoints" type="int" value="50"/>
+		<Variable name="AmmoPacks" type="int" value="4"/>
+		<Variable name="ExtraLifes" type="int" value="4"/>
+		<Variable name="TeamID" type="int" value="0"/>
+		<Variable name="WeaponType" type="int" value="0"/>
+		<Variable name="WeaponDamage" type="int" value="1"/>
+		<Variable name="PlayerID" type="int" value="1"/>
+	</GameVariables>
+	<SignalCode>
+		<Signal name="GAME_INITIATED" parallel="false">
+			<Command name="CHANGECOLOR" par1="black"/>
+		</Signal>
+		<Signal name="GAME_STARTED" parallel="false">
+			<Command name="ENABLETAGGER"/>
+            <Command name="PLAYSOUND" par1="good_luck"/>
+			<Command name="CHANGECOLORFROMTEAM" par1="TeamID"/>
+		</Signal>
+		<Signal name="SHOT_RECEIVED" parallel="false">
+			<IF var="shot_team" operator="!=" value="TeamID">
+				<IF var="ShieldPoints" operator=">" value="0">
+                    <Command name="PLAYSOUND" par1="shield_hit_2"/>
+					<Command name="DECREASESHIELDPOINTS" par1="shot_damage"/>
+					<Command name="RETURN"/>
+				</IF>
+                <Command name="PLAYSOUND" par1="shield_hit_1"/>
+				<Command name="DECREASELIFEPOINTS" par1="shot_damage"/>
+			</IF>
+		</Signal>
+		<Signal name="TRIGGER_PULLED" parallel="false">
+			<IF var="AmmoPoints" operator="=" value="0">
+                <Command name="PLAYSOUND" par1="out_of_ammo_2"/>
+				<Command name="SETAMMOINDICATOR" par1="true"/>
+				<Command name="DISABLETAGGER"/>
+				<Command name="RETURN"/>
+			</IF>
+            <Command name="PLAYSOUND" par1="laser_gun_shot_1"/>
+			<Command name="DECREASEAMMOPOINTS" par1="1"/>
+		</Signal>
+		<Signal name="RECHARGE_BUTTON" parallel="true">
+			<IF var="AmmoPacks" operator="=" value="0">
+				<Command name="RETURN"/>
+			</IF>
+            <Command name="PLAYSOUND" par1="reload_1"/>
+			<Command name="DELAY" par1="3000"/>
+			<Command name="SETVARIABLE" par1="AmmoPoints" par2="max_AmmoPoints"/>
+			<Command name="DECREASEAMMOPACKS" par1="1"/>
+			<Command name="SETAMMOINDICATOR" par1="false"/>
+			<IF var="LifePoints" operator=">" value="0">
+				<Command name="ENABLETAGGER"/>
+			</IF>
+		</Signal>
+		<Signal name="PLAYER_DEAD" parallel="true" static="true">
+			<IF var="ExtraLifes" operator=">" value="0">
+				<Command name="DELAY" par1="5000"/>
+				<Command name="DECREASEEXTRALIFES" par1="1"/>
+				<Command name="SETVARIABLE" par1="ShieldPoints" par2="max_ShieldPoints"/>
+				<Command name="SETVARIABLE" par1="LifePoints" par2="max_LifePoints"/>
+                <ELSE>
+                    <Command name="PLAYSOUND" par1="youre_out"/>
+                </ELSE>
+			</IF>
+		</Signal>
+		<Signal name="GAME_OVER" parallel="false">
+            <Command name="PLAYSOUND" par1="game_over"/>
+			<Command name="DISABLETAGGER"/>
+			<Command name="CHANGECOLOR" par1="white"/>
+		</Signal>
+        <Signal name="PLAYER_BASE_SIGNAL" parallel="true" static="true">
+            <IF var="BaseTeamID" operator="=" value="TeamID">
+                <Command name="PLAYSOUND" par1="reload_long"/>
+                <Command name="DELAY" par1="6000"/>
+                <Command name="SETVARIABLE" par1="AmmoPoints" par2="max_AmmoPoints"/>
+                <Command name="SETVARIABLE" par1="AmmoPacks" par2="max_AmmoPacks"/>
+            </IF>
+        </Signal>
+	</SignalCode>
+	<PlayerStats>
+	</PlayerStats>
+</OpenLaserTagGame>

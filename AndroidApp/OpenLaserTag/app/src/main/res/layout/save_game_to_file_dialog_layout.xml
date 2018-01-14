@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/save_game_to_file_name_layout">
+        <TextView
+            android:text="@string/NameDoublePoint"
+            android:textColor="?colorTextPrimary"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:textColor="?colorTextPrimary"
+            android:inputType="textUri"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/save_game_to_file_name"/>
+    </LinearLayout>
+
+    <CheckBox
+        android:text="@string/OverwriteIfFileAlreadyExists"
+        android:textSize="20sp"
+        android:textColor="?colorTextPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/save_game_to_file_overwrite"/>
+
+    <fragment
+        android:id="@+id/save_game_to_file_select_path_fragment"
+        android:name="de.c_ebberg.openlasertag.SelectXMLFileFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        tools:layout="@layout/file_list_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:text="@android:string/cancel"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/save_game_to_file_cancel"/>
+        <Button
+            android:text="@android:string/ok"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/save_game_to_file_ok"/>
+    </LinearLayout>
+
+</LinearLayout>

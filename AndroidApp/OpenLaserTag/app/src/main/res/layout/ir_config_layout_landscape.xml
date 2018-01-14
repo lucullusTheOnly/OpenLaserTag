@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ir_config_start_pulse_layout">
+
+        <TextView
+            android:text="@string/StartPulse"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ir_config_start_pulse_label"/>
+
+        <EditText
+            android:text="800"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:id="@+id/ir_config_start_pulse_text"/>
+
+        <TextView
+            android:text="@string/IRConfigUnit"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ir_config_start_pulse_unit"/>
+
+        <ImageView
+            android:background="?colorTextPrimary"
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"/>
+
+        <TextView
+            android:text="@string/PulsePause"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ir_config_pulse_pause_label"/>
+
+        <EditText
+            android:text="700"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/ir_config_pulse_pause_text"/>
+
+        <TextView
+            android:text="@string/IRConfigUnit"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ir_config_pulse_pause_unit"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ir_config_start_pulse_layout"
+        android:orientation="horizontal"
+        android:id="@+id/ir_config_1_pulse_layout">
+
+        <TextView
+            android:text="@string/OnePulse"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ir_config_1_pulse_label"/>
+
+        <EditText
+            android:text="200"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:textAlignment="center"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/ir_config_1_pulse_text"/>
+
+        <TextView
+            android:text="@string/IRConfigUnit"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ir_config_1_pulse_unit"/>
+
+        <ImageView
+            android:background="?colorTextPrimary"
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"/>
+
+        <TextView
+            android:text="@string/ZeroPulse"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ir_config_0_pulse_label"/>
+
+        <EditText
+            android:text="500"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/ir_config_0_pulse_text"/>
+
+        <TextView
+            android:text="@string/IRConfigUnit"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ir_config_0_pulse_unit"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ir_config_1_pulse_layout"
+        android:id="@+id/ir_config_duration_tolerance_layout">
+
+        <TextView
+            android:text="@string/DurationTolerance"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/ir_config_duration_tolerance_label"/>
+
+        <TextView
+            android:text="@string/IRConfigUnit"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/ir_config_duration_tolerance_unit"/>
+
+        <EditText
+            android:text="100"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ir_config_duration_tolerance_label"
+            android:layout_toEndOf="@id/ir_config_duration_tolerance_label"
+            android:layout_toLeftOf="@id/ir_config_duration_tolerance_unit"
+            android:layout_toStartOf="@id/ir_config_duration_tolerance_unit"
+            android:id="@+id/ir_config_duration_tolerance_text"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ir_config_duration_tolerance_layout"
+        android:id="@+id/ir_config_send_layout">
+
+        <ImageView
+            android:src="@drawable/red_cross"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/ir_config_send_image"/>
+
+        <Button
+            android:text="@string/SendToTagger"
+            android:textSize="23sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/ir_config_send_image"
+            android:layout_toStartOf="@id/ir_config_send_image"
+            android:id="@+id/ir_config_send_button"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:text="@string/SetToDefaultValues"
+        android:textSize="23sp"
+        android:textColor="?colorTextPrimary"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ir_config_send_layout"
+        android:id="@+id/ir_config_default_button"/>
+
+</RelativeLayout>

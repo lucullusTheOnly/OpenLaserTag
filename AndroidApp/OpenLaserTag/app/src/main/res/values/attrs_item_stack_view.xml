@@ -1,0 +1,10 @@
+<resources>
+    <declare-styleable name="ItemStackView">
+        <attr name="NumberTextDimensionRatio" format="float" />
+        <attr name="NumberTextColor" format="color" />
+        <attr name="Number" format="integer"/>
+        <attr name="ValueTextDimensionRatio" format="float"/>
+        <attr name="ValueTextColor" format="color"/>
+        <attr name="Value" format="string"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:columnCount="3">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/bt_config_name_layout">
+        <TextView
+            android:text="@string/DeviceNName"
+            android:textSize="25sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/bt_config_name_label"/>
+
+        <ImageButton
+            app:srcCompat="@drawable/ic_sync_black_24dp"
+            android:background="?colorBackground1"
+            android:padding="0dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:scaleType="fitCenter"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/bt_config_name_change_button"/>
+
+        <EditText
+            android:text="HC-06"
+            android:textSize="25sp"
+            android:textColor="?colorTextPrimary"
+            android:inputType="textNoSuggestions"
+            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/bt_config_name_label"
+            android:layout_toEndOf="@id/bt_config_name_label"
+            android:layout_toLeftOf="@id/bt_config_name_change_button"
+            android:layout_toStartOf="@id/bt_config_name_change_button"
+            android:layout_centerVertical="true"
+            android:id="@+id/bt_config_name_text"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bt_config_name_layout"
+        android:id="@+id/bt_config_pin_layout">
+
+        <TextView
+            android:text="@string/PIN"
+            android:textSize="25sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/bt_config_pin_label"/>
+
+        <ImageButton
+            app:srcCompat="@drawable/ic_sync_black_24dp"
+            android:padding="0dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:scaleType="fitCenter"
+            android:background="?colorBackground1"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/bt_config_pin_change_button"/>
+
+        <EditText
+            android:text="1234"
+            android:textSize="25sp"
+            android:textColor="?colorTextPrimary"
+            android:maxLength="4"
+            android:inputType="number"
+            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
+            android:paddingRight="20dp"
+            android:paddingEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/bt_config_pin_label"
+            android:layout_toEndOf="@id/bt_config_pin_label"
+            android:layout_toLeftOf="@id/bt_config_pin_change_button"
+            android:layout_toStartOf="@id/bt_config_pin_change_button"
+            android:id="@+id/bt_config_pin_text"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bt_config_pin_layout"
+        android:id="@+id/bt_config_UUID_layout">
+
+        <TextView
+            android:text="@string/UUID"
+            android:textSize="25sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/bt_config_UUID_label"/>
+
+        <TextView
+            android:text="834BC-AD34F-813FC-09B34-C5DA3"
+            android:textColor="?colorTextPrimary"
+            android:textSize="23sp"
+            android:background="?colorBackground2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/bt_config_UUID_label"
+            android:layout_toEndOf="@id/bt_config_UUID_label"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp"
+            android:id="@+id/bt_config_UUID_text"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

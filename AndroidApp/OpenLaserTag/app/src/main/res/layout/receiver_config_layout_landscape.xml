@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="?colorBackground1">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/receiver_config_front_back_layout">
+        <TextView
+            android:text="@string/Front"
+            android:textSize="25sp"
+            android:textColor="?colorTextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/receiver_config_front_back_text"/>
+
+        <ImageButton
+            app:srcCompat="@drawable/ic_sync_black_24dp"
+            android:padding="0dp"
+            android:background="?colorBackground1"
+            android:scaleType="fitCenter"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@id/receiver_config_front_back_text"
+            android:layout_toEndOf="@id/receiver_config_front_back_text"
+
+            android:id="@+id/receiver_config_change_front_back_button"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:text="@string/ButtonPlus"
+        android:textStyle="bold"
+        android:textColor="?colorTextPrimary"
+        android:textSize="25sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/receiver_config_add_button"/>
+
+    <de.c_ebberg.openlasertag.HumanView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/receiver_config_front_back_layout"
+        android:layout_toEndOf="@id/receiver_config_front_back_layout"
+        android:layout_toLeftOf="@id/receiver_config_add_button"
+        android:layout_toStartOf="@id/receiver_config_add_button"
+        app:IDTextDimension="24sp"
+        app:ImageSrc="@drawable/ic_human"
+        android:id="@+id/receiver_config_human_view"
+        android:background="?colorBackground1"/>
+
+    <Button
+        android:text="@string/ButtonMinus"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="?colorTextPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/receiver_config_human_view"
+        android:layout_toStartOf="@id/receiver_config_human_view"
+        android:id="@+id/receiver_config_remove_button"/>
+
+</RelativeLayout>

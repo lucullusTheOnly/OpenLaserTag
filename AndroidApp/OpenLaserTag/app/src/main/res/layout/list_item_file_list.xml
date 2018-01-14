@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="?colorBackground1"
+    android:descendantFocusability="blocksDescendants"
+    android:visibility="visible">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/divider_horizontal_bright"
+        android:id="@+id/itemdivider"
+        android:background="?colorItemDivider"/>
+
+    <ImageView
+        android:id="@+id/item_icon"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:paddingRight="10dp"
+        android:paddingEnd="10dp"
+        android:background="?colorBackground1"
+        app:srcCompat="@drawable/ic_folder_icon"
+        android:scaleType="fitCenter"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/itemdivider"
+        />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:id="@+id/info_button"
+        android:background="?colorBackground1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/itemdivider"
+        app:srcCompat="@drawable/ic_info"
+        android:paddingTop="7dp" />
+
+    <TextView
+        android:id="@+id/item_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:textColor="?colorTextPrimary"
+        android:textSize="21sp"
+        android:background="?colorBackground1"
+        android:layout_toRightOf="@id/item_icon"
+        android:layout_toLeftOf="@id/info_button"
+        android:layout_below="@id/itemdivider"
+        android:text="Listitem 1"/>
+
+</RelativeLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:text="User Timer"
+        android:textSize="23sp"
+        android:textColor="?colorTextPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/game_config_item_timer_name"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/game_config_item_timer_name"
+        android:id="@+id/game_config_item_timer_info_layout">
+
+        <TextView
+            android:text="@string/DurationDoublePoint"
+            android:textSize="17sp"
+            android:textColor="?colorTextSecondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="900 s"
+            android:textColor="?colorTextSecondary"
+            android:textSize="17sp"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/game_config_item_timer_duration"/>
+
+        <TextView
+            android:text="@string/TicksDoublePoint"
+            android:textColor="?colorTextSecondary"
+            android:textSize="17sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="1 s"
+            android:textColor="?colorTextSecondary"
+            android:textSize="17sp"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/game_config_item_timer_ticks"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/game_config_item_timer_info_layout"
+        android:background="?colorForegroundSecondary"/>
+
+</RelativeLayout>

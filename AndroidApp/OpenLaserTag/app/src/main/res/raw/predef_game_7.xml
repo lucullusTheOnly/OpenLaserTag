@@ -1,0 +1,177 @@
+<OpenLaserTagGame>
+    <GameName value="Hostage Rescue Team Match"/>
+    <timestamp value="2017-07-27_22:54"/>
+    <SketchVersion value="0.1"/>
+    <AppVersion value="0.1"/>
+    <Description>Every Team holds a hostage from the other team (PlayerIDs 0 and 1; LEDs have white color) without a weapon. The hostage has no shield. The team has to rescue their hostage and bring it to their team base. The Team that can rescue their hostage first alive wins. If a hostage dies during the rescue, it has to return to the enemy's team base, where it is revived with the enemies team base signal. The hostage is only allowed to move (and is then vulnerable), when a co team member shoots him with the Identifier weapon (LEDs blink in team color). To finish the rescue, the hostage has reach the team base. The players can reload ammo at their team base. Life and shield cannot be recharged.</Description>
+    <Definitions>
+        <Weapon index="0" name="Pistol" damagesign="+" shotfrequency="2" range="1" allowed="true"/>
+        <Weapon index="1" name="Identifier" damagesign="+" shotfrequency="2" range="1" allowed="true"/>
+        <Timer name="GameTimer" duration="1200" ticks="1"/>
+        <Team index="0" name="Reds" color="red"/>
+        <Team index="1" name="Blues" color="blue"/>
+    </Definitions>
+    <Sounds>
+        <Sound name="good_luck"/>
+        <Sound name="shield_hit_1"/>
+        <Sound name="shield_hit_2"/>
+        <Sound name="out_of_ammo_2"/>
+        <Sound name="laser_gun_shot_1"/>
+        <Sound name="reload_1"/>
+        <Sound name="youre_out"/>
+        <Sound name="game_over"/>
+        <Sound name="reload_long"/>
+        <Sound name="activate_1"/>
+        <Sound name="activate_3"/>
+    </Sounds>
+    <GameVariables>
+        <Variable name="max_LifePoints" type="int" value="100"/>
+        <Variable name="max_ShieldPoints" type="int" value="100"/>
+        <Variable name="max_AmmoPoints" type="int" value="100"/>
+        <Variable name="max_ExtraLifes" type="int" value="0"/>
+        <Variable name="max_AmmoPacks" type="int" value="6"/>
+        <Variable name="LifePoints" type="int" value="100"/>
+        <Variable name="ShieldPoints" type="int" value="100"/>
+        <Variable name="AmmoPoints" type="int" value="100"/>
+        <Variable name="AmmoPacks" type="int" value="6"/>
+        <Variable name="ExtraLifes" type="int" value="0"/>
+        <Variable name="TeamID" type="int" value="0"/>
+        <Variable name="WeaponType" type="int" value="0"/>
+        <Variable name="WeaponDamage" type="int" value="1"/>
+        <Variable name="PlayerID" type="int" value="1"/>
+        <Variable name="Team0HostageID" type="int" value="0"/>
+        <Variable name="Team1HostageID" type="int" value="1"/>
+        <Variable name="still_hostage" type="boolean" value="true"/>
+        <Variable name="hostage_dead" type="boolean" value="false"/>
+    </GameVariables>
+    <SignalCode>
+        <Signal name="GAME_INITIATED" parallel="false">
+            <Command name="CHANGECOLOR" par1="black"/>
+        </Signal>
+        <Signal name="GAME_STARTED" parallel="false">
+            <IF var="PlayerID" operator="<" value="2">
+                <Command name="DISABLETAGGER"/>
+                <Command name="SETWEAPONALLOWED" par1="1" par2="true"/>
+                <Command name="SETWEAPONALLOWED" par1="0" par2="false"/>
+                <Command name="SETVARIABLE" par1="ShieldPoints" par2="0"/>
+                <Command name="SETVARIABLE" par1="WeaponType" par2="1"/>
+                <Command name="SETVARIABLE" par1="WeaponDamage" par2="0"/>
+                <Command name="CHANGECOLOR" par1="white"/>
+                <Command name="DISABLETAGGER"/>
+                <ELSE>
+                    <Command name="ENABLETAGGER"/>
+                    <Command name="CHANGECOLORFROMTEAM" par1="TeamID"/>
+                </ELSE>
+            </IF>
+            <Command name="PLAYSOUND" par1="good_luck"/>
+        </Signal>
+        <Signal name="SHOT_RECEIVED" parallel="false">
+            <IF var="PlayerID" operator="<" value="2">
+                <IF var="still_hostage" operator="=" value="true">
+                    <IF var="hostage_dead" operator="=" value="false">
+                        <IF var="shot_team" operator="=" value="TeamID">
+                            <IF var="shot_weapon_type" operator="=" value="1">
+                                <Command name="SETVARIABLE" par1="still_hostage" par2="false"/>
+                                <Command name="SETVARIABLE" par1="WeaponType" par2="1"/>
+                                <Command name="CHANGECOLORFROMTEAM" par1="TeamID"/>
+                                <Command name="BLINKLEDSUNTILSTOPPED" par1="4"/>
+                                <Command name="ENABLETAGGER"/>
+                                <Command name="PLAYSOUND" par1="activate_3"/>
+                            </IF>
+                        </IF>
+                    </IF>
+                    <ELSE>
+                        <IF var="shot_team" operator="!=" value="TeamID">
+                            <Command name="PLAYSOUND" par1="shield_hit_1"/>
+                            <Command name="DECREASELIFEPOINTS" par1="shot_damage"/>
+                        </IF>
+                    </ELSE>
+                </IF>
+                <ELSE>
+                    <IF var="shot_team" operator="!=" value="TeamID">
+                        <IF var="ShieldPoints" operator=">" value="0">
+                            <Command name="PLAYSOUND" par1="shield_hit_2"/>
+                            <Command name="DECREASESHIELDPOINTS" par1="shot_damage"/>
+                            <Command name="RETURN"/>
+                        </IF>
+                        <Command name="PLAYSOUND" par1="shield_hit_1"/>
+                        <Command name="DECREASELIFEPOINTS" par1="shot_damage"/>
+                    </IF>
+                </ELSE>
+            </IF>
+        </Signal>
+        <Signal name="TRIGGER_PULLED" parallel="false">
+            <IF var="WeaponType" operator="!=" value="1">
+                <IF var="AmmoPoints" operator="=" value="0">
+                    <Command name="PLAYSOUND" par1="out_of_ammo_2"/>
+                    <Command name="SETAMMOINDICATOR" par1="true"/>
+                    <Command name="SETWEAPONALLOWED" par1="0" par2="false"/>
+                    <Command name="SETVARIABLE" par1="WeaponType" par2="1"/>
+                    <Command name="RETURN"/>
+                </IF>
+                <Command name="PLAYSOUND" par1="laser_gun_shot_1"/>
+                <Command name="DECREASEAMMOPOINTS" par1="1"/>
+                <ELSE>
+                    <Command name="PLAYSOUND" par1="activate_1"/>
+                </ELSE>
+            </IF>
+        </Signal>
+        <Signal name="RECHARGE_BUTTON" parallel="true" static="true">
+            <IF var="AmmoPacks" operator="=" value="0">
+                <Command name="RETURN"/>
+            </IF>
+            <Command name="PLAYSOUND" par1="reload_1"/>
+            <Command name="DELAY" par1="3000"/>
+            <Command name="SETVARIABLE" par1="AmmoPoints" par2="max_AmmoPoints"/>
+            <Command name="DECREASEAMMOPACKS" par1="1"/>
+            <Command name="SETAMMOINDICATOR" par1="false"/>
+            <IF var="LifePoints" operator=">" value="0">
+                <Command name="SETWEAPONALLOWED" par1="0" par2="true"/>
+                <Command name="SETVARIABLE" par1="WeaponType" par2="0"/>
+            </IF>
+        </Signal>
+        <Signal name="PLAYER_DEAD" parallel="true" static="true">
+            <IF var="PlayerID" operator="<" value="2">
+                <Command name="SETVARIABLE" par1="still_hostage" par2="true"/>
+                <Command name="SETVARIALBE" par1="hostage_dead" par2="true"/>
+                <Command name="STOPBLINKLEDS"/>
+                <Command name="CHANGECOLOR" par1="black"/>
+                <Command name="DISABLETAGGER"/>
+                <Command name="PLAYSOUND" par1="youre_out"/>
+                <ELSE>
+                    <Command name="PLAYSOUND" par1="youre_out"/>
+                    <Command name="DISABLETAGGER"/>
+                    <Command name="CHANGECOLOR" par1="black"/>
+                </ELSE>
+            </IF>
+        </Signal>
+        <Signal name="GAME_OVER" parallel="false">
+            <Command name="PLAYSOUND" par1="game_over"/>
+            <Command name="DISABLETAGGER"/>
+            <Command name="CHANGECOLOR" par1="black"/>
+        </Signal>
+        <Signal name="PLAYER_BASE_SIGNAL" parallel="true" static="true">
+            <IF var="PlayerID" operator="<" value="2">
+                <IF var="BaseTeamID" operator="!=" value="TeamID">
+                    <Command name="SETVARIABLE" par1="LifePoints" par2="max_LifePoints"/>
+                    <Command name="SETVARIABLE" par1="hostage_dead" par2="false"/>
+                    <Command name="CHANGECOLOR" par1="white"/>
+                    <ELSE>
+                        <Command name="STOPBLINKLEDS"/>
+                        <Command name="CHANGECOLORFROMTEAM" par1="TeamID"/>
+                        <Command name="DISABLETAGGER"/>
+                    </ELSE>
+                </IF>
+                <ELSE>
+                    <IF var="BaseTeamID" operator="=" value="TeamID">
+                        <Command name="PLAYSOUND" par1="reload_long"/>
+                        <Command name="DELAY" par1="6000"/>
+                        <Command name="SETVARIABLE" par1="AmmoPacks" par2="max_AmmoPacks"/>
+                    </IF>
+                </ELSE>
+            </IF>
+        </Signal>
+    </SignalCode>
+    <PlayerStats>
+    </PlayerStats>
+</OpenLaserTagGame>

@@ -1,0 +1,7 @@
+<resources>
+    <declare-styleable name="HumanView">
+        <attr name="IDTextDimension" format="dimension" />
+        <attr name="ImageSrc" format="color|reference" />
+        <attr name="ReceiverPositions" format="string" />
+    </declare-styleable>
+</resources>

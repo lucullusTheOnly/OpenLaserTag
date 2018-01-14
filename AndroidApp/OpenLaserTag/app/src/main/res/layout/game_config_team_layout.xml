@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:text="Teamname"
+        android:textSize="23sp"
+        android:textColor="?colorTextPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/game_config_item_team_name"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/game_config_item_team_name"
+        android:id="@+id/game_config_item_team_color_layout">
+        <ImageView
+            android:contentDescription="@string/TeamColor"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:id="@+id/game_config_item_team_color_view"/>
+
+        <TextView
+            android:text="Colorname"
+            android:textColor="?colorTextSecondary"
+            android:textSize="17sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:id="@+id/game_config_item_team_color"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/game_config_item_team_color_layout"
+        android:background="?colorForegroundSecondary"/>
+
+</RelativeLayout>
